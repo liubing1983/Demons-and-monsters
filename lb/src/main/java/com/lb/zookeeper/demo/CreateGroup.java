@@ -5,6 +5,7 @@ import java.io.IOException;
 import org.apache.zookeeper.CreateMode;
 import org.apache.zookeeper.KeeperException;
 import org.apache.zookeeper.ZooDefs.Ids;
+import org.apache.zookeeper.data.Stat;
 
 public class CreateGroup extends ZooKeeperInstance {
 
@@ -13,6 +14,8 @@ public class CreateGroup extends ZooKeeperInstance {
 	public void createPNode(String groupPath) throws KeeperException, InterruptedException {
 		// 创建组
 		String cGroupPath = zk.create(groupPath, "group".getBytes(), Ids.OPEN_ACL_UNSAFE, CreateMode.PERSISTENT);
+		zk.getData("/ZKGroupLB", this.wh, new Stat());
+
 		// 输出组路径
 		System.out.println("创建的组路径为：" + cGroupPath);
 	}

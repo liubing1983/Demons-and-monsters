@@ -13,6 +13,7 @@ public class DelGroup extends ZooKeeperInstance {
 			// 删除所有孩子节点
 			for (String child : children)
 				zk.delete(groupPath + "/" + child, -1);
+			    System.out.println("09090909090");
 		}
 		// 删除组目录节点
 		zk.delete(groupPath, -1);
@@ -21,7 +22,7 @@ public class DelGroup extends ZooKeeperInstance {
 	public static void main(String args[]) throws IOException, KeeperException, InterruptedException {
 		DelGroup dg = new DelGroup();
 		dg.createZKInstance();
-		dg.delete("/ZKGroup");
+		dg.delete("/ZKGroupLB");
 		dg.ZKclose();
 	}
 }

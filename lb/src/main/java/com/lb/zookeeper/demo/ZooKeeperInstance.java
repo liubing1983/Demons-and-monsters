@@ -16,12 +16,14 @@ public class ZooKeeperInstance {
 	// 创建Watcher实例
 	Watcher wh = new Watcher() {
 		public void process(WatchedEvent event) {
-			System.out.println(event.toString());
+			System.out.println(event.getPath());
+			System.out.println("---------"+event.toString());
 		}
 	};
 
 	// 初始化Zookeeper实例
 	public void createZKInstance() throws IOException {
+		// zookeeper server, 超时, watcher
 		zk = new ZooKeeper("master1:2181", ZooKeeperInstance.SESSION_TIMEOUT, this.wh);
 	}
 
