@@ -24,7 +24,7 @@ public class ZooKeeperInstance {
 	// 初始化Zookeeper实例
 	public void createZKInstance() throws IOException {
 		// zookeeper server, 超时, watcher
-		zk = new ZooKeeper("master1:2181", ZooKeeperInstance.SESSION_TIMEOUT, this.wh);
+		zk = new ZooKeeper("cloud38:2181", ZooKeeperInstance.SESSION_TIMEOUT, this.wh);
 	}
 
 	// 关闭ZK实例

@@ -26,6 +26,6 @@ public class ListMembers extends ZooKeeperInstance {
 		ListMembers lm=new ListMembers();
 		lm.createZKInstance();
 		//lm.list("/ZKGroupLB");
-		lm.list("/");
+		lm.list("/tescommzk/monitor");
 	}
 }
