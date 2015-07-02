@@ -10,10 +10,9 @@ import org.apache.thrift.transport.TTransportException;
 public class GisThriftClient {
 	/**
 	 * 
-	 * @param ip
-	 *            thriftserver IP
-	 * @param tablenames
-	 *            以","逗号分割的字符串
+	 * @param ip thriftserver IP
+	 * @param id 序号
+	 * @param name  名称
 	 */
 	public void startClient(String ip, int id, String name) {
 		TTransport transport;
@@ -34,7 +33,6 @@ public class GisThriftClient {
 	}
 
 	/**
-	 * 接收参数第一位为thrift server IP 后面为需同步表名 如果只传IP,默认为同步所有表
 	 * 
 	 * @param args
 	 */
