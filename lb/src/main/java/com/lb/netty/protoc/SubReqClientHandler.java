@@ -36,6 +36,7 @@ public class SubReqClientHandler extends ChannelHandlerAdapter {
 
 	@Override
 	public void channelActive(ChannelHandlerContext ctx) {
+		System.out.println("23423423423423423423");
 		for (int i = 0; i < 10; i++) {
 			ctx.write(subReq(i));
 		}
@@ -45,9 +46,10 @@ public class SubReqClientHandler extends ChannelHandlerAdapter {
 	private SubscribeReqProto.SubscribeReq subReq(int i) {
 		SubscribeReqProto.SubscribeReq.Builder builder = SubscribeReqProto.SubscribeReq.newBuilder();
 		builder.setSubReqID(i);
-		builder.setUserName("Lilinfeng");
-		builder.setProductName("Netty Book For Protobuf");
+		builder.setUserName("tescomm"+i);
+		builder.setProductName("tescomm"+i);
 		builder.setAddress("NanJing YuHuaTai");
+		System.out.println("9-9-09-09-09-0");
 		return builder.build();
 	}
 

@@ -29,7 +29,7 @@ import io.netty.handler.codec.protobuf.ProtobufVarint32FrameDecoder;
 import io.netty.handler.codec.protobuf.ProtobufVarint32LengthFieldPrepender;
 
 /**
- * @author lilinfeng
+ * @author liub
  * @date 2014年2月14日
  * @version 1.0
  */
@@ -39,12 +39,14 @@ public class SubReqClient {
 		// 配置客户端NIO线程组
 		EventLoopGroup group = new NioEventLoopGroup();
 		try {
+			System.out.println("12312312312312");
 			Bootstrap b = new Bootstrap();
 			b.group(group).channel(NioSocketChannel.class).option(ChannelOption.TCP_NODELAY, true).handler(new ChannelInitializer<SocketChannel>() {
 				@Override
 				public void initChannel(SocketChannel ch) throws Exception {
+					System.out.println("123123123123123");
 					ch.pipeline().addLast(new ProtobufVarint32FrameDecoder());
-					ch.pipeline().addLast(new ProtobufDecoder(SubscribeRespProto.SubscribeResp.getDefaultInstance()));
+					ch.pipeline().addLast(new ProtobufDecoder(SubscribeReqProto.SubscribeReq.getDefaultInstance()));
 					ch.pipeline().addLast(new ProtobufVarint32LengthFieldPrepender());
 					ch.pipeline().addLast(new ProtobufEncoder());
 					ch.pipeline().addLast(new SubReqClientHandler());
@@ -53,7 +55,6 @@ public class SubReqClient {
 
 			// 发起异步连接操作
 			ChannelFuture f = b.connect(host, port).sync();
-
 			// 当代客户端链路关闭
 			f.channel().closeFuture().sync();
 		} finally {

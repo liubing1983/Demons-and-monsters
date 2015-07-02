@@ -30,18 +30,20 @@ public class SubReqServerHandler extends ChannelHandlerAdapter {
 	@Override
 	public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
 		SubscribeReqProto.SubscribeReq req = (SubscribeReqProto.SubscribeReq) msg;
-		if ("Lilinfeng".equalsIgnoreCase(req.getUserName())) {
+		if ("tescomm".equalsIgnoreCase(req.getUserName())) {
 			System.out.println("Service accept client subscribe req --------------: [" + req.toString() + "]");
 			System.out.println(req.getUserName());
-			ctx.writeAndFlush(resp(req.getSubReqID()));
+			ctx.writeAndFlush(resp(req.getSubReqID(), req.getUserName()));
 		}
 	}
 
-	private SubscribeRespProto.SubscribeResp resp(int subReqID) {
-		SubscribeRespProto.SubscribeResp.Builder builder = SubscribeRespProto.SubscribeResp.newBuilder();
+	private SubscribeReqProto.SubscribeReq resp(int subReqID, String username) {
+		SubscribeReqProto.SubscribeReq.Builder builder = SubscribeReqProto.SubscribeReq.newBuilder();
 		builder.setSubReqID(subReqID);
-		builder.setRespCode(0);
-		builder.setDesc("llllllllllllllllllllllllllllll Netty book order succeed, 3 days later, sent to the designated address");
+		builder.setUserName("hello," + username);
+		builder.setProductName("hadoop");
+		builder.setAddress("http://101.251.236.35:7180/cmf/home");
+		
 		return builder.build();
 	}
 

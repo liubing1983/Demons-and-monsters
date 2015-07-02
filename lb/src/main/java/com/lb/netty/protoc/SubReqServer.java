@@ -31,7 +31,7 @@ import io.netty.handler.logging.LogLevel;
 import io.netty.handler.logging.LoggingHandler;
 
 /**
- * @author lilinfeng
+ * @author liub
  * @date 2014年2月14日
  * @version 1.0
  */
