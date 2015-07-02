@@ -18,11 +18,8 @@ package com.lb.netty.protoc;
 import io.netty.channel.ChannelHandlerAdapter;
 import io.netty.channel.ChannelHandlerContext;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
- * @author lilinfeng
+ * @author liub
  * @date 2014年2月14日
  * @version 1.0
  */
@@ -43,6 +40,11 @@ public class SubReqClientHandler extends ChannelHandlerAdapter {
 		ctx.flush();
 	}
 
+	/**
+	 * 回调函数
+	 * @param i
+	 * @return
+	 */
 	private SubscribeReqProto.SubscribeReq subReq(int i) {
 		SubscribeReqProto.SubscribeReq.Builder builder = SubscribeReqProto.SubscribeReq.newBuilder();
 		builder.setSubReqID(i);

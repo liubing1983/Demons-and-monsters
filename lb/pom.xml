@@ -64,6 +64,14 @@
 		</dependency>
 		<!-- zookeeper end -->
 
+		<!-- thrift start -->
+		<dependency>
+			<groupId>org.apache.thrift</groupId>
+			<artifactId>libthrift</artifactId>
+			<version>0.9.2</version>
+		</dependency>
+		<!-- thrift end -->
+
 		<dependency>
 			<groupId>log4j</groupId>
 			<artifactId>log4j</artifactId>
