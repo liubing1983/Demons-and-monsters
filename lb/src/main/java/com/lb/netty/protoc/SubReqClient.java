@@ -58,7 +58,7 @@ public class SubReqClient {
 			// 当代客户端链路关闭
 			f.channel().closeFuture().sync();
 		} finally {
-			// 优雅退出，释放NIO线程组
+			// 退出，释放NIO线程组
 			group.shutdownGracefully();
 		}
 	}
@@ -76,6 +76,6 @@ public class SubReqClient {
 				// 采用默认值
 			}
 		}
-		new SubReqClient().connect(port, "127.0.0.1");
+		new SubReqClient().connect(port, "10.95.3.133");
 	}
 }

@@ -33,10 +33,12 @@ public class SubReqClientHandler extends ChannelHandlerAdapter {
 
 	@Override
 	public void channelActive(ChannelHandlerContext ctx) {
-		System.out.println("23423423423423423423");
-		for (int i = 0; i < 10; i++) {
+		long l = System.currentTimeMillis();
+		System.out.println("start : "+ l);
+		for (int i = 0; i < 10000; i++) {
 			ctx.write(subReq(i));
 		}
+		System.out.println("end : "+ (System.currentTimeMillis() - l));
 		ctx.flush();
 	}
 
@@ -51,13 +53,13 @@ public class SubReqClientHandler extends ChannelHandlerAdapter {
 		builder.setUserName("tescomm"+i);
 		builder.setProductName("tescomm"+i);
 		builder.setAddress("NanJing YuHuaTai");
-		System.out.println("9-9-09-09-09-0");
+		//System.out.println("9-9-09-09-09-0");
 		return builder.build();
 	}
 
 	@Override
 	public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
-		System.out.println("Receive server response : [" + msg + "]");
+		//System.out.println("Receive server response : [" + msg + "]");
 	}
 
 	@Override

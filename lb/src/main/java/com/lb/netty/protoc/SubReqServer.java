@@ -47,20 +47,19 @@ public class SubReqServer {
 						@Override
 						public void initChannel(SocketChannel ch) {
 							ch.pipeline().addLast(new ProtobufVarint32FrameDecoder());
+							// 绑定protobuffer
 							ch.pipeline().addLast(new ProtobufDecoder(SubscribeReqProto.SubscribeReq.getDefaultInstance()));
 							ch.pipeline().addLast(new ProtobufVarint32LengthFieldPrepender());
 							ch.pipeline().addLast(new ProtobufEncoder());
 							ch.pipeline().addLast(new SubReqServerHandler());
 						}
 					});
-
 			// 绑定端口，同步等待成功
 			ChannelFuture f = b.bind(port).sync();
-
 			// 等待服务端监听端口关闭
 			f.channel().closeFuture().sync();
 		} finally {
-			// 优雅退出，释放线程池资源
+			// 退出，释放线程池资源
 			bossGroup.shutdownGracefully();
 			workerGroup.shutdownGracefully();
 		}
