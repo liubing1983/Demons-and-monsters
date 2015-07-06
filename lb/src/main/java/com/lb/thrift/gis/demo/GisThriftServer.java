@@ -19,7 +19,7 @@ public class GisThriftServer {
 	public static void main(String[] args) {
 		try {
 			//传输通道 - 非阻塞方式
-			TNonblockingServerTransport serverTransport = new TNonblockingServerSocket(7911);
+			TNonblockingServerTransport serverTransport = new TNonblockingServerSocket(50088);
 			
 			//异步IO，需要使用TFramedTransport，它将分块缓存读取。
 			TTransportFactory transportFactory = new TFramedTransport.Factory();

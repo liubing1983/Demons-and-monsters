@@ -19,6 +19,14 @@
 
 
 	<dependencies>
+	
+	<dependency>
+			<groupId>jdk.tools</groupId>
+			<artifactId>jdk.tools</artifactId>
+			<version>1.6</version>
+			<scope>system</scope>
+			<systemPath>/usr/lib/java7/lib/tools.jar</systemPath>
+		</dependency>
 
 		<dependency>
 			<groupId>junit</groupId>
@@ -31,16 +39,16 @@
 		<dependency>
 			<groupId>com.facebook.nifty</groupId>
 			<artifactId>nifty-core</artifactId>
-			<version>0.15.0</version>
+			<version>0.14.0</version>
 		</dependency>
 		<dependency>
 			<groupId>com.facebook.nifty</groupId>
 			<artifactId>nifty-client</artifactId>
-			<version>0.15.0</version>
+			<version>0.14.0</version>
 		</dependency>
 		<!-- nifty end -->
 		
-				<!-- thrift start -->
+		<!-- thrift start -->
 		<dependency>
 			<groupId>org.apache.thrift</groupId>
 			<artifactId>libthrift</artifactId>
