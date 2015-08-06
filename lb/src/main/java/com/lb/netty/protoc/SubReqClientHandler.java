@@ -35,7 +35,7 @@ public class SubReqClientHandler extends ChannelHandlerAdapter {
 	public void channelActive(ChannelHandlerContext ctx) {
 		long l = System.currentTimeMillis();
 		System.out.println("start : "+ l);
-		for (int i = 0; i < 10000; i++) {
+		for (int i = 0; i < 100; i++) {
 			ctx.write(subReq(i));
 		}
 		System.out.println("end : "+ (System.currentTimeMillis() - l));

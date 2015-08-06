@@ -14,6 +14,21 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<log4j-version>1.2.16</log4j-version>
 		<org.slf4j-version>1.6.1</org.slf4j-version>
+		
+
+		<c3p0-version>0.9.1.2</c3p0-version>
+
+		<hadoop-core-version>2.5.0-mr1-cdh5.2.0</hadoop-core-version>
+		<hadoop-common-version>2.5.0-cdh5.2.0</hadoop-common-version>
+		<hadoop-hdfs-version>2.5.0-cdh5.2.0</hadoop-hdfs-version>
+		<hadoop-yarn-client-version>2.5.0-cdh5.2.0</hadoop-yarn-client-version>
+		<hadoop-tools-version>2.5.0-mr1-cdh5.2.0</hadoop-tools-version>
+		<hadoop-test-version>2.5.0-mr1-cdh5.2.0</hadoop-test-version>
+		<oozie-client-version>4.0.0-cdh5.2.0</oozie-client-version>
+		<oozie-core-version>4.0.0-cdh5.2.0</oozie-core-version>
+		<hadoop-mrunit-version>0.9.0-incubating</hadoop-mrunit-version>
+		<hive-cli-version>0.13.1-cdh5.2.0</hive-cli-version>
+		<hive-jdbc-version>0.13.1-cdh5.2.0</hive-jdbc-version>
 	</properties>
 
 
@@ -95,6 +110,39 @@
 			<version>2.8.0</version>
 		</dependency>
 		<!-- zookeeper end -->
+		
+		
+		<dependency>
+			<groupId>org.apache.hadoop</groupId>
+			<artifactId>hadoop-core</artifactId>
+			<version>${hadoop-core-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.hadoop</groupId>
+			<artifactId>hadoop-common</artifactId>
+			<version>${hadoop-common-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.hadoop</groupId>
+			<artifactId>hadoop-hdfs</artifactId>
+			<version>${hadoop-hdfs-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.hadoop</groupId>
+			<artifactId>hadoop-yarn-client</artifactId>
+			<version>${hadoop-yarn-client-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.hadoop</groupId>
+			<artifactId>hadoop-tools</artifactId>
+			<version>${hadoop-tools-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.hadoop</groupId>
+			<artifactId>hadoop-test</artifactId>
+			<version>${hadoop-test-version}</version>
+		</dependency>
+		
 
 		<dependency>
 			<groupId>log4j</groupId>

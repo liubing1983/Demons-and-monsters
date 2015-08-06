@@ -1,15 +1,13 @@
 package com.lb.netty.b03;
 
-import java.io.UnsupportedEncodingException;
-
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
 import io.netty.channel.ChannelHandlerAdapter;
 import io.netty.channel.ChannelHandlerContext;
 
-import org.apache.log4j.Logger;
+import java.io.UnsupportedEncodingException;
 
-import sun.text.normalizer.CharTrie.FriendAgent;
+import org.apache.log4j.Logger;
 
 public class TimeClientHandler extends ChannelHandlerAdapter {
 
