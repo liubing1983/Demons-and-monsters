@@ -4,22 +4,13 @@ import java.util.Stack;
 
 import org.apache.commons.lang.StringUtils;
 
+/**
+ * 使用后缀表达式, 计算四则表达式
+ * 暂时不支持"/".
+ * @author liubing
+ *
+ */
 public class Postfix {
-
-	public static void main(String[] args) {
-
-		// 拆分中缀表达式
-		// String[] s = "11+2*3/9".split("[+\\-\\*/]");
-		// 中缀转后缀
-		// infixToSuffix("1 * 11 + 2 * 9 / ( 3 － 2 )".split(" "));
-		// String s = "1 * 11 + 2 * 9 / ( 3 - 2 )";
-		String s = "1 + 1 + 3 + 5 * 7 - 2 * ( 5 + 2 )";
-		if (args.length > 0) {
-			s = args[0];
-		}
-		System.out.println("@@@@@@@@@@@@@@@@@   原始中缀表达式: " + s);
-		System.out.println("结果: " + count(infixToSuffix(splits(s))));
-	}
 
 	/**
 	 * 按固定分隔符分割表达式
@@ -185,6 +176,21 @@ public class Postfix {
 			}
 		}
 		return stack.pop().toString();
+	}
+	
+	public static void main(String[] args) {
+
+		// 拆分中缀表达式
+		// String[] s = "11+2*3/9".split("[+\\-\\*/]");
+		// 中缀转后缀
+		// infixToSuffix("1 * 11 + 2 * 9 / ( 3 － 2 )".split(" "));
+		// String s = "1 * 11 + 2 * 9 / ( 3 - 2 )";
+		String s = "1 + 1 + 3 + 5 * 7 - 2 * ( 5 + 2 )";
+		if (args.length > 0) {
+			s = args[0];
+		}
+		System.out.println("@@@@@@@@@@@@@@@@@   原始中缀表达式: " + s);
+		System.out.println("结果: " + count(infixToSuffix(splits(s))));
 	}
 
 }

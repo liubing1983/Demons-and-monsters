@@ -11,7 +11,7 @@ public class CuratorDemo {
 	
 	Logger logger = Logger.getLogger(CuratorDemo.class);
 	
-	// 创建连接
+	// 创建连接d
 	ZkConnection zkc = new ZkConnection("lb", "cloud36,cloud37,cloud38");
 	CuratorFramework client = zkc.getZKConnection();
 	
